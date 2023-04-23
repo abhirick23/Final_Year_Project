@@ -1,0 +1,22 @@
+<h1>Hello world</h1>
+
+
+<p>
+    <!-- {% if results >=0.8 %}
+        <p>This is a very malicious file! <br> this is the result: {{results}}</p>
+    {% elif results < 0.8 and results >=0.5 %}
+        <p>This is not completely safe has a chance of being malicious, tread carefully <br> this is the result: {{results}}</p>
+    {%else%}
+        <p>This file is safe <br> this is the result: {{results}}</p>
+    {% endif %} -->
+
+    {% if results >= 0.8 %}
+        <p>This is a very malicious file! <br> This is the result: {{results}}</p>
+    {% elif results >= 0.5 %}
+        <p>This file may not be completely safe, please use caution. <br> This is the result: {{results}}</p>
+    {% else %}
+        <p>This file is safe. <br> This is the result: {{results}}</p>
+    {% endif %}
+
+</p>
+

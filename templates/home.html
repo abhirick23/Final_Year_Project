@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_files/styles.css') }}">
+    </head>
+    <body>
+        <div class="login">
+        <h1>Malware files</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label  class="form-label">Enter your malware file</label><br><br>
+                <input class="form-control" type="file" name="input_file" placeholder="Enter the file here " required /><br><br>
+            </div >
+            
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="check whether file is malicious or not" required />
+            </div>
+        </form>
+    <body>
+</html>

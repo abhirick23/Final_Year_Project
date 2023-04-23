@@ -1,0 +1,52 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+color: navy;
+font-size: 36px;
+}
+
+.btn.btn-primary {
+    background-color:cornflowerblue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+  /* Animation effect for the button */
+.btn.btn-primary:after {
+    content: "";
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    opacity: 1;
+}
+.btn.btn-primary:focus:after {
+    animation: ripple 1s ease-out;
+}
+
+  /* Animation keyframes for the button */
+@keyframes ripple {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+}
