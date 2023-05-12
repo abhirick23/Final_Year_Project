@@ -15,7 +15,7 @@ def trainer(data):
     loaded_model = keras.models.load_model("notebooks_dataset\my_model.h5")
     pred = loaded_model.predict(data)
     print(pred)
-    if predictions >= pred:
+    if predictions <= pred:
         return predictions
     else:
         return pred

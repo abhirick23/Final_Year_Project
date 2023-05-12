@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet" type="text/css" />
+    <script src = "{{url_for('static',filename='js/test.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/aa8f0b9aa4.js" crossorigin="anonymous"></script>
+   
+    <!-- <link rel = "shortcut icon" href="{{url_for('static',filename='fav.ico')}}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_files/styles.css') }}">
+    <title>{% block title %}MDS{% endblock title %}</title>
+                <div class="nav">
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top rounded-bottom"id="navbar"style="">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="brand">   
+                          <a class="navbar-brand " href="/"style="font-size:25px"id="logo"><b class="p-1 mb-0 bg-primary text-white rounded">Malware</b><i class="text-primary">Detection</i></b></a>
+                      </div>
+                    <nav class="navMenu">
+                    <a href="#">Home</a>
+                    <a href="#">ABOUT</a>
+                    <a href="#">AUTHORS</a>
+                    <!-- <a href="#">FUTURE</a> -->
+                    <div class="dot"></div>
+                  </nav>
+                </nav>
+                </div>
+       
+
+   
+    <br>
+    <br>
+    <br>
+   
+    </div>
+    
+    {% block head %} {%endblock %}
+
+    
+
+</head>
+
+<body>
+    
+    
+
+    
+        {% block body %}
+
+
+
+
+        {% endblock %}
+
+
+
+
+</body>
+
+</html>

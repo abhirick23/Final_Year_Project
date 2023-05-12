@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_files/styles.css') }}">
     </head>
@@ -6,14 +6,129 @@
         <div class="login">
         <h1>Malware files</h1>
         <form action="{{ url_for('predict_datapoint')}}" method="post" enctype="multipart/form-data">
+
             <div class="mb-3">
-                <label  class="form-label">Enter your malware file</label><br><br>
+                <label class="form-label">Name</label><br>
+                <input type="text" name="name" placeholder="Whats thy name" required><br><br>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Age</label><br>
+                <input type="number" name="age" placeholder="Enter your age" min="11" max="75" required><br><br>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                
+                
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label><br>
+                <input type="email" name="email" placeholder="Enter email address" required><br><br>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Occupation</label><br>
+                <select name="occupation" id="occupation">
+                    <option value="" selected disabled>Current status</option>
+                    <option value="student">Student</option>
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Unemployed</option>
+                </select><br><br>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Organization</label><br>
+                <input type="text" name="organization" placeholder="Pkace of work or study" required><br><br>
+            </div>
+
+            <div class="mb-3">
+                <label  class="form-label">Enter your malware file</label><br>
                 <input class="form-control" type="file" name="input_file" placeholder="Enter the file here " required /><br><br>
             </div >
+
+    
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="check whether file is malicious or not" required />
+            </div>
+        </form>
+        <script src="{{ url_for('static', filename='js_files/scripts.js') }}"></script>
+    <body>
+</html> -->
+
+{% extends 'base.html'%}
+{% block body %}
+  <body>
+
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css_files/styles.css') }}"> -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <div class="container">
+      <section>
+        <div class="login">
+        <form action="{{ url_for('predict_datapoint')}}" method="post" enctype="multipart/form-data">
+          <label>
+            <!-- <input name="name" id="name" type="text" required /> -->
+            <input type="text" name="name"  required>
+            <div class="label-text">Full Name</div>
+          </label>
+          
+          <label>
+            <input type="email" name="email" id="email" required />
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+            <div class="label-text">Email</div>
+          </label>
+          <label>
+            <!-- <input type="number" name="age" id="number" required /> -->
+            <input type="number" name="age" min="11" max="75" required>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+            <div class="label-text">Age</div>
+          </label>
+          <label>
+            <input type="text" name="country" id="country" required>
+            <div class="label-text">Country</div>
+          </label>
+          <label>
+            <input type="text" name="city" id="city" required>
+            <div class="label-text">City</div>
+          </label>
+          <label>
+            <input type="occupation" name="occupation" id="text" required />    
+            <div class="label-text">Occupation</div>
+          </label>
+          <label>
+            <!-- <input type="organization" name="organization" id="text" required /> -->
+            <input type="text" name="organization" id="text" required>
+            <div class="label-text">Organization</div>
+          </label>
+
+          
+          
+           
+          
+
+          <div class="mb-3">
+                <label  class="label-text">Enter your file</label><BR>
+                <div class="form-file">
+                  <input class="label-text" type="file" name="input_file" placeholder="Enter the file here " required /><br><br>
+                </div> 
+              </div >
             
             <div class="mb-3">
                 <input class="btn btn-primary" type="submit" value="check whether file is malicious or not" required />
             </div>
         </form>
-    <body>
-</html>
+    </div>
+    </section>
+    </div>
+   
+  </body>
+  {% endblock %}
+

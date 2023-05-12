@@ -8,3 +8,8 @@ xgboost
 catboost
 pefile
 flask
+pymongo
+Flask-PyMongo
+geopy
+folium
+dash
